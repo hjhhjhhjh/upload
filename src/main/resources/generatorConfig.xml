@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+
+
+<generatorConfiguration>
+	<!-- <properties resource="jdbc.properties" /> -->
+	<context id="SqlServer" targetRuntime="MyBatis3Simple"
+		defaultModelType="flat">
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers" value="com.frontpay.base.MSSQLMapper" />
+		</plugin>
+
+		<jdbcConnection driverClass="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+			connectionURL="jdbc:sqlserver://localhost:1433;databasename=TestDB"
+			userId="sa" password="123456">
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="com.frontpay.oas.biz.entity"
+			targetProject="src/main/java" />
+
+		<sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources" />
+		<javaClientGenerator targetPackage="com.frontpay.oas.mapper"
+			targetProject="src/main/java" type="XMLMAPPER" />
+
+		<!-- <table tableName="tb_check_data_face_auth" domainObjectName="CheckDataFaceAuthEntity" 
+			/> <table tableName="tb_check_data_identity" domainObjectName="CheckDataIdentityEntity" 
+			/> <table tableName="tb_check_data_micropayment_auth" domainObjectName="CheckDataMicropaymentAuthEntity" 
+			/> <table tableName="tb_check_data_mobile_auth" domainObjectName="CheckDataMobileAuthEntity" 
+			/> <table tableName="tb_check_data_offline_micropayment_auth" domainObjectName="CheckDataOfflineMicropaymentAuthEntity" 
+			/> <table tableName="tb_check_data_person_bankcard" domainObjectName="CheckDataPersonBankcardEntity" 
+			/> <table tableName="tb_company" domainObjectName="CompanyEntity" /> <table 
+			tableName="tb_connector" domainObjectName="ConnectorEntity" /> <table tableName="tb_files" 
+			domainObjectName="FilesEntity" />
+		<table tableName="tb_paper" domainObjectName="PaperEntity" />
+		 -->
+		<!-- <table tableName="tb_person" domainObjectName="PersonEntity" /> <table 
+			tableName="tb_sub_user" domainObjectName="SubUserEntity" /> <table tableName="tb_sub_user_service" 
+			domainObjectName="SubUserServiceEntity" /> <table tableName="tb_user" domainObjectName="UserEntity" 
+			/> <table tableName="tb_user_check_result" domainObjectName="UserCheckResultEntity" 
+			/> <table tableName="tb_user_service" domainObjectName="UserServiceEntity" 
+			/> <table tableName="tb_person_check_result" domainObjectName="PersonCheckResultEntity" 
+			/> <table tableName="tb_company_check_result" domainObjectName="CompanyCheckResultEntity" 
+			/> <table tableName="tb_operator_log" domainObjectName="OperatorLogEntity" 
+			
+			/>
+			-->
+			 <table tableName="Base_User" domainObjectName="BaseUserEitity" /> 
+			 <!-- 
+			<table tableName="tb_check_data_offline_submit_bank_info" domainObjectName="CheckDataOfflineSubmitBankInfoEntity" 
+			/> -->
+	</context>
+</generatorConfiguration>
